@@ -5,8 +5,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -22,6 +20,7 @@ public class Servidor {
     public Servidor( int porta){
         try {
             this.servidor = new ServerSocket(porta);
+            System.out.println("SEVIDOR CRIADO");
         } catch (IOException ex) {
             System.out.println("ERROR NA CRIAÇÃO DO SERVIDOR: \n" + ex.getMessage());
         }
@@ -36,7 +35,9 @@ public class Servidor {
     public Socket NovaConexao(){
        Socket cliente = null;
         try {
+            System.out.println("AGUARDANDO CONEXAO COM CLIENTE...");
             cliente = this.servidor.accept();
+            System.out.println("CONEXAO COM UM CLIENTE ESTABELECIDA");
         } catch (IOException ex) {
             System.out.println("ERRO AO SE COMUNICAR COM CLIENTE: \n" + ex.getMessage());
         }
