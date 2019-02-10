@@ -63,6 +63,12 @@ public class Servidor {
         return false;
     }
     
+    /**
+     * Será tratado toda a comunicação cliente sevidor sendo feita troca das <br/>
+     * mensagens necessarias. <br/>
+     * este metodo recebe como paramentro o socket do cliente que solicitou o servidor
+     * @param cliente 
+     */
     public void comunicao( Socket cliente){
         try {
             System.out.println("CONEXAO CLINTE SERVIDOR INICIADA...");
